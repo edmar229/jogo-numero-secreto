@@ -1,13 +1,17 @@
 let listaNumerosSorteados = []
+let numeroLimite = 3
 let numeroSecreto
 let tentativas = 0
 
 function gerarNumeroAleatorio() {
-  let numeroEscolhido = parseInt(Math.random() * 4 + 1)
+  let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1)
   verificarListaSorteados(numeroEscolhido)
 }
 
 function verificarListaSorteados(numeroEscolhido) {
+  if(listaNumerosSorteados.length == numeroLimite) {
+    listaNumerosSorteados = []
+  }
   if (listaNumerosSorteados.includes(numeroEscolhido)) {
     gerarNumeroAleatorio()
   } else {
