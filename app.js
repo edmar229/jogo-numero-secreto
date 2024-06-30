@@ -1,5 +1,5 @@
 let listaNumerosSorteados = []
-let numeroLimite = 3
+let numeroLimite = 10
 let numeroSecreto
 let tentativas = 0
 
@@ -26,6 +26,7 @@ gerarNumeroAleatorio()
 function exibirTextoNaTela(tag, texto) {
   let campo = document.querySelector(tag)
   campo.innerHTML = texto
+  responsiveVoice.speak(texto, 'Brazilian Portuguese Female', { rate: 1.2 })
 }
 
 function exibirMensagemInicial() {
